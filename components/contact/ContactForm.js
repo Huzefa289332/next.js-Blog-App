@@ -39,6 +39,7 @@ const ContactForm = () => {
   const sendMessageHandler = async event => {
     event.preventDefault();
     // optional: add client-side validation
+
     setRequestStatus('pending');
 
     try {
@@ -47,6 +48,7 @@ const ContactForm = () => {
         name: enteredName,
         message: enteredMessage,
       });
+
       setRequestStatus('success');
       setEnteredEmail('');
       setEnteredMessage('');
@@ -66,6 +68,7 @@ const ContactForm = () => {
       message: 'Your message is on its way!',
     };
   }
+
   if (requestStatus === 'success') {
     notification = {
       status: 'success',
@@ -73,6 +76,7 @@ const ContactForm = () => {
       message: 'Message sent successfully!',
     };
   }
+
   if (requestStatus === 'error') {
     notification = {
       status: 'error',
